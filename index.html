@@ -1,1 +1,41 @@
-Hello World!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Phrase Generator</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Phrase Generator</h1>
+        <p id="phrase"></p>
+        <button onclick="generatePhrase()">Refresh</button>
+    </div>
+    <script>
+        const firstValues = ['Weak Ground Ball', 'Fly Ball', 'Line Drive', 'Hard Hit Ground Ball'];
+const secondValues = ['Pitcher', '1B', '2B', '3B', 'C', 'LF', 'CF',' RF', 'SS'];
+const thirdValues = [''];
+
+function generatePhrase() {
+    const randomFirst = firstValues[Math.floor(Math.random() * firstValues.length)];
+    const randomSecond = secondValues[Math.floor(Math.random() * secondValues.length)];
+    const randomThird = thirdValues[Math.floor(Math.random() * thirdValues.length)];
+    
+    document.getElementById('phrase').innerText = `${randomFirst} ${randomSecond} ${randomThird}`;
+}
+
+    </script>
+</body>
+</html>
